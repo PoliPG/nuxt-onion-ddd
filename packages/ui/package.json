@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "@storefront/ui",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",

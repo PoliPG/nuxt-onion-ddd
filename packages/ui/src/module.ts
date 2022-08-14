@@ -12,8 +12,7 @@ export interface ModuleOptions {
   addPlugin: boolean
 }
 
-const rPath = (p: string) =>
-  fileURLToPath(new URL(p, import.meta.url).toString())
+const rPath = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -26,9 +25,9 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(options, nuxt) {
     if (options.addPlugin) {
       // Standard components
-      addComponentsDir({ path: rPath('./components') })
+      addComponentsDir({ path: rPath('./components').toString() })
 
-      const runtimeDir = fileURLToPath(rPath('./runtime'))
+      const runtimeDir = rPath('./runtime')
       nuxt.options.build.transpile.push(runtimeDir)
       addPlugin(resolve(runtimeDir, 'plugin'))
 
