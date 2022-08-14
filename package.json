@@ -1,5 +1,6 @@
 {
   "private": false,
+  "name": "storefront",
   "packageManager": "pnpm@7.1.0",
   "workspaces": [
     "packages/*"

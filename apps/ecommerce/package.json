@@ -1,11 +1,14 @@
 {
-  "name": "storefront-ecommerce",
+  "name": "ecommerce",
   "private": false,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "checkout": "workspace:"
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.8"
