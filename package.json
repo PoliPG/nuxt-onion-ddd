@@ -2,7 +2,15 @@
   "private": false,
   "name": "storefront",
   "packageManager": "pnpm@7.1.0",
+  "scripts": {
+    "dev": "npx nx run-many --target=dev --all",
+    "dev:build": "npx nx run-many --target=dev:build  --projects=@storefront/catalog,@storefront/ui,@storefront/checkout",
+    "dev:prepare": "npx nx run-many --target=dev:prepare  --projects=@storefront/catalog,@storefront/ui,@storefront/checkout"
+  },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "nx": "^14.8.1"
+  }
 }

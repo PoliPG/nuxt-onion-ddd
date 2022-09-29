@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "@storefront/checkout": "workspace:",
-    "@storefront/ui": "workspace:"
+    "@storefront/ui": "workspace:",
+    "@storefront/catalog": "workspace:"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.8"
+    "nuxt": "3.0.0-rc.11"
   }
 }
