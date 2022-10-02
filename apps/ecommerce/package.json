@@ -8,9 +8,9 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@storefront/checkout": "workspace:",
-    "@storefront/ui": "workspace:",
-    "@storefront/catalog": "workspace:"
+    "@storefront/checkout": "*",
+    "@storefront/ui": "*",
+    "@storefront/catalog": "*"
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.11"
