@@ -1,15 +1,10 @@
 {
-  "private": false,
+  "private": true,
   "name": "storefront",
-  "packageManager": "pnpm@7.1.0",
-  "scripts": {
-    "dev": "npx nx run-many --target=dev --all",
-    "dev:build": "npx nx run-many --target=dev:build  --projects=@storefront/catalog,@storefront/ui,@storefront/checkout",
-    "dev:prepare": "npx nx run-many --target=dev:prepare  --projects=@storefront/catalog,@storefront/ui,@storefront/checkout"
-  },
+  "packageManager": "yarn@1.22.4",
   "workspaces": [
     "packages/*",
-    "app/*"
+    "apps/*"
   ],
   "devDependencies": {
     "lerna": "^5.5.4",

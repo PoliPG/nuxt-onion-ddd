@@ -8,13 +8,13 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule'
+    name: '@storefront/catalog',
+    configKey: 'catalog'
   },
   defaults: {
     addPlugin: true
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     if (options.addPlugin) {
       const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
       nuxt.options.build.transpile.push(runtimeDir)

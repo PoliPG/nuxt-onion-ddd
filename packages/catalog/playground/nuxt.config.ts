@@ -1,10 +1,8 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import MyModule from '..'
+import storefrontCatalogModule from '..'
 
 export default defineNuxtConfig({
-  modules: [
-    MyModule
-  ],
+  modules: [storefrontCatalogModule],
   myModule: {
     addPlugin: true
   }
