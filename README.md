@@ -1,8 +1,8 @@
-# nuxt-onion-ddd
+# Nuxt layered application based in DDD
 
 Proyect with nuxt and typescript based on onion layered arquitecture and domain driven design
 
-# Install the Proyect
+# Install and run the project
 
 To install all the depencencies run the next command:
 
@@ -10,8 +10,14 @@ To install all the depencencies run the next command:
 lerna bootstrap
 ```
 
-The next command you have to run is dev:prepare for the nuxt modules
+Run dev:prepare for nuxt modules
 
 ```
 yarn lerna run dev:prepare
+```
+
+Start server application
+
+```
+yarn lerna run dev
 ```
