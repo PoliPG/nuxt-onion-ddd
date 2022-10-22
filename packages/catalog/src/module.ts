@@ -1,24 +1,23 @@
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, addComponentsDir } from '@nuxt/kit'
 
-export interface ModuleOptions {
-  addPlugin: boolean
-}
+const rPath = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule({
   meta: {
     name: '@storefront/catalog',
     configKey: 'catalog'
   },
-  defaults: {
-    addPlugin: true
-  },
-  setup(options, nuxt) {
-    if (options.addPlugin) {
-      const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-      nuxt.options.build.transpile.push(runtimeDir)
-      addPlugin(resolve(runtimeDir, 'plugin'))
-    }
+  setup (options, nuxt) {
+    // Standard components
+    const componentsDir = rPath('./UI')
+    addComponentsDir({ path: `${componentsDir}/atoms` })
+
+    const infraDir = rPath('./Infrastructure')
+    nuxt.options.build.transpile.push(infraDir)
+
+    // Plugins
+    addPlugin(resolve(infraDir, 'plugins/plugin'))
   }
 })

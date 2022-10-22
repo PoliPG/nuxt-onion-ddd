@@ -2,7 +2,7 @@
 
 Proyect with nuxt and typescript based on onion layered arquitecture and domain driven design
 
-# Install and run the project
+# Install and run the project for development
 
 To install all the depencencies run the next command:
 
@@ -10,14 +10,22 @@ To install all the depencencies run the next command:
 lerna bootstrap
 ```
 
-Run dev:prepare for nuxt modules
+To start server in development mode
 
 ```
-yarn lerna run dev:prepare
+yarn dev
 ```
 
-Start server application
+## Production
+
+Build the application for production:
 
 ```
-yarn lerna run dev
+yarn build
+```
+
+Locally preview production build:
+
+```bash
+yarn preview
 ```

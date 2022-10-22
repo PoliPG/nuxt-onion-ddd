@@ -6,6 +6,11 @@
     "packages/*",
     "apps/*"
   ],
+  "scripts": {
+    "dev": "yarn lerna run dev:prepare && yarn lerna run dev",
+    "build": "yarn lerna run build",
+    "preview": "yarn lerna run preview"
+  },
   "devDependencies": {
     "lerna": "^5.5.4",
     "nx": "^14.8.1"

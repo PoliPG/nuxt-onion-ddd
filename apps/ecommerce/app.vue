@@ -1,5 +1,6 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <a-product name="Producto" :price="40" />
+    <a-button />
   </div>
 </template>
