@@ -19,6 +19,15 @@ export default defineNuxtModule({
     addComponentsDir({ path: `${componentsDir}/atoms` })
 
     const resolver = createResolver(import.meta.url)
-    await installModule(await resolver.resolvePath('@nuxtjs/tailwindcss'))
+    await installModule(await resolver.resolvePath('@nuxtjs/tailwindcss'),
+      {
+        configPath: rPath('./tailwind.config.cjs'),
+        config: {
+          content: [
+            `${componentsDir}/**/*.{js,vue,ts}`
+          ]
+        }
+      }
+    )
   }
 })

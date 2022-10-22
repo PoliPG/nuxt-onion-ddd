@@ -9,15 +9,15 @@ export default defineNuxtModule({
     name: '@storefront/catalog',
     configKey: 'catalog'
   },
-  setup (options, nuxt) {
+  setup (_options, nuxt) {
     // Standard components
     const componentsDir = rPath('./UI')
     addComponentsDir({ path: `${componentsDir}/atoms` })
 
-    const infraDir = rPath('./Infrastructure')
-    nuxt.options.build.transpile.push(infraDir)
+    const runtimeDir = rPath('./Infrastructure')
+    nuxt.options.build.transpile.push(runtimeDir)
 
     // Plugins
-    addPlugin(resolve(infraDir, 'plugins/plugin'))
+    addPlugin(resolve(runtimeDir, 'plugins/plugin'))
   }
 })

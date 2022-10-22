@@ -1,8 +1,8 @@
 export class Product {
- private name: string
- private price: number
+  private name: string
+  private price: number
 
- public getPrice() {
+  public getPrice () {
     return this.price
- }
+  }
 }

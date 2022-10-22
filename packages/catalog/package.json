@@ -16,9 +16,9 @@
   ],
   "scripts": {
     "build": "nuxt-module-build",
-    "dev": "nuxi dev playground --port=3003",
+    "dev:playground": "nuxi dev playground --port=3003",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev": "nuxt-module-build --stub"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.11"
