@@ -1,10 +1,5 @@
 import { fileURLToPath } from 'url'
-import {
-  defineNuxtModule,
-  createResolver,
-  installModule,
-  addComponentsDir
-} from '@nuxt/kit'
+import { defineNuxtModule, createResolver, installModule, addComponentsDir } from '@nuxt/kit'
 
 export interface ModuleOptions {
   content: String[]
@@ -17,23 +12,19 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@storefront/ui',
     configKey: 'ui'
   },
-  async setup (options: ModuleOptions) {
+  async setup(options: ModuleOptions) {
     // Import components
     const componentsDir = rPath('./UI')
     addComponentsDir({ path: `${componentsDir}/atoms` })
+    addComponentsDir({ path: `${componentsDir}/organisms` })
 
     // Tailwindcss config
     const resolver = createResolver(import.meta.url)
-    await installModule(await resolver.resolvePath('@nuxtjs/tailwindcss'),
-      {
-        configPath: rPath('./tailwind.config.cjs'),
-        config: {
-          content: [
-            ...options.content,
-            `${componentsDir}/**/*.{js,vue,ts}`
-          ]
-        }
+    await installModule(await resolver.resolvePath('@nuxtjs/tailwindcss'), {
+      configPath: rPath('./tailwind.config.cjs'),
+      config: {
+        content: [...options.content, `${componentsDir}/**/*.{js,vue,ts}`]
       }
-    )
+    })
   }
 })
