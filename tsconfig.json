@@ -1,7 +1,12 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./apps/ecommerce/.nuxt/tsconfig.json",
   "compilerOptions": {
     "experimentalDecorators": true
-  }
+  },
+  "paths": {
+    "@shared": [
+      "./packages/shared"
+    ],
+  },
+  "extends": "./apps/ecommerce/.nuxt/tsconfig.json",
 }

@@ -1,6 +1,12 @@
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin, addComponentsDir } from '@nuxt/kit'
+import {
+  defineNuxtModule,
+  addPlugin,
+  addComponentsDir,
+  installModule,
+  createResolver
+} from '@nuxt/kit'
 
 const rPath = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 
@@ -9,7 +15,7 @@ export default defineNuxtModule({
     name: '@storefront/catalog',
     configKey: 'catalog'
   },
-  setup (_options, nuxt) {
+  async setup(_options, nuxt) {
     // Standard components
     const componentsDir = rPath('./UI')
     addComponentsDir({ path: `${componentsDir}/atoms` })
@@ -19,5 +25,11 @@ export default defineNuxtModule({
 
     // Plugins
     addPlugin(resolve(runtimeDir, 'plugins/plugin'))
+
+    // Modules
+    const resolver = createResolver(import.meta.url)
+    await installModule(await resolver.resolvePath('@storefront/ui'), {
+      content: [`${componentsDir}/**/*.{js,vue,ts}`]
+    })
   }
 })
